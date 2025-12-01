@@ -1,0 +1,202 @@
+/* --- FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap');
+
+/* --- VARIABLES --- */
+:root {
+  --bg-dark: #304330; /* Dark Green theme */
+  --bg-card: #18191c;
+  --text-main: #ffffff;
+  --text-muted: #8d9ca0;
+  --accent: #FFA500;
+  --accent-glow: rgba(255, 165, 0, 0.45);
+  --border-light: rgba(255, 255, 255, 0.08);
+
+  --font-head: "Space Grotesk", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
+}
+
+/* --- GLOBAL RESET --- */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-dark);
+  font-family: var(--font-head);
+  overflow-x: hidden;
+}
+
+/* --- WRAPPER --- */
+.syllabus-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+/* --- NAVBAR STYLES --- */
+
+
+/* --- HERO SECTION --- */
+.syllabus-hero {
+  text-align: center;
+  padding: 120px 20px 60px 20px;
+}
+
+.syllabus-title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  margin-top: 0;
+  letter-spacing: -2px;
+  color: #fff;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.syllabus-sub {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  font-family: var(--font-code);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- CONTENT GRID --- */
+.syllabus-content {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 150px;
+}
+
+.syllabus-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 400px;
+}
+
+.syllabus-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px -10px var(--accent-glow);
+}
+
+.syllabus-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.syllabus-card:hover::before {
+  opacity: 1;
+}
+.clear-btn {
+  margin-top: 20px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-family: var(--font-code);
+  color: var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.clear-btn:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 18px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+
+.syllabus-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+  color: #fff;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+/* --- LIST ITEMS --- */
+.point-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.point-item {
+  margin-bottom: 12px;
+}
+
+/* Checkbox + clickable text */
+.problem-link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-style {
+  margin-right: 12px;
+  cursor: pointer;
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+}
+
+.question-text {
+  color: var(--text-muted);
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  transition: color 0.25s, padding-left 0.2s;
+}
+
+.question-text:hover {
+  color: var(--accent);
+  padding-left: 6px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    
+  .syllabus-title {
+    font-size: 2.6rem;
+  }
+
+  .syllabus-hero {
+    padding-top: 100px;
+  }
+
+  .syllabus-content {
+    grid-template-columns: 1fr;
+    max-width: 1000px;
+  }
+}
+@media (max-width: 1300px) {
+
+  .syllabus-content {
+    max-width: 1100px;
+  }
+}

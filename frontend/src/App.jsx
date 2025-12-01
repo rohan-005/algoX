@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import './App.css'
 import Landing from "./pages/Landing";
+import Syllabus from "./pages/Syllabus";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <div className="app">
       <Routes>
         <Route path="/" element={<Landing/>} />
+        <Route path="/curriculum" element={<Syllabus/>} />
       </Routes>
       </div>
     </Router>

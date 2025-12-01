@@ -7,9 +7,9 @@ import { EncryptedText } from "../components/encrypted-text";
 
 export default function Landing() {
   const menuItems = [
-    { label: "Home", link: "#home" },
+    { label: "Home", link: "/" },
     { label: "Why", link: "#why" },
-    { label: "Curriculum", link: "#curriculum" },
+    { label: "Curriculum", link: "/curriculum" },
     { label: "How it Works", link: "#how-it-works" },
   ];
 
@@ -115,7 +115,7 @@ export default function Landing() {
 
             <div className="btn-box">
               <button className="btn primary-btn">Start Learning</button>
-              {/* <button className="btn secondary-btn">Browse Questions</button> */}
+              <button className="btn secondary-btn">Curriculum</button>
             </div>
           </div>
 
