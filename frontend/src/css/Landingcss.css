@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap");
 
 /* --- VARIABLES --- */
 :root {
@@ -6,12 +6,12 @@
   --bg-card: #18191c;
   --text-main: #ffffff;
   --text-muted: #949ea3;
-  --accent: #FFA500;
+  --accent: #ffa500;
   --accent-glow: rgba(255, 165, 0, 0.4);
   --border-light: rgba(255, 255, 255, 0.08);
-  
-  --font-head: 'Space Grotesk', sans-serif;
-  --font-code: 'JetBrains Mono', monospace;
+
+  --font-head: "Space Grotesk", sans-serif;
+  --font-code: "JetBrains Mono", monospace;
 }
 
 /* --- GLOBAL RESET --- */
@@ -33,8 +33,10 @@ body {
 .page-wrapper {
   width: 100%;
   position: relative;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px
+    ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 50px 50px;
 }
@@ -82,7 +84,6 @@ body {
   /* overflow: hidden; Removed to allow better mobile scrolling */
   /* padding: 70px 0; Add padding for when content stacks on mobile */
 }
-
 
 /* Hero Split Layout */
 .center-content {
@@ -201,7 +202,7 @@ body {
   padding: 30px;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   transform: rotateY(-5deg) rotateX(2deg); /* 3D Effect */
   transition: transform 0.5s ease;
 }
@@ -301,8 +302,14 @@ body {
 }
 
 @keyframes scrollWheel {
-  0% { top: 8px; opacity: 1; }
-  100% { top: 25px; opacity: 0; }
+  0% {
+    top: 8px;
+    opacity: 1;
+  }
+  100% {
+    top: 25px;
+    opacity: 0;
+  }
 }
 
 /* --- SECTIONS --- */
@@ -342,7 +349,9 @@ body {
   line-height: 1.2;
 }
 
-.center-text { text-align: center; }
+.center-text {
+  text-align: center;
+}
 
 .highlight {
   color: var(--accent);
@@ -379,7 +388,10 @@ body {
 /* Gradient Border Trick */
 .card-border {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-radius: 12px;
   padding: 1px;
   background: linear-gradient(135deg, rgb(255, 255, 255), transparent);
@@ -420,9 +432,9 @@ body {
 
 /* Connecting Line (Desktop) */
 .steps-container::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 40px; 
+  top: 40px;
   left: 0;
   width: 100%;
   height: 1px;
@@ -431,9 +443,13 @@ body {
   display: none; /* Hidden on mobile */
 }
 
-@media(min-width: 900px) {
-  .steps-container { position: relative; }
-  .steps-container::before { display: block; }
+@media (min-width: 900px) {
+  .steps-container {
+    position: relative;
+  }
+  .steps-container::before {
+    display: block;
+  }
 }
 
 .step-number {
@@ -447,14 +463,22 @@ body {
   padding-right: 10px;
 }
 
-.step-card h3 { font-size: 1.2rem; margin-bottom: 5px; }
-.step-card p { font-size: 1rem; color: var(--text-muted); }
+.step-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+.step-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
 
 /* --- PREP SECTION --- */
-.prep-section { margin-bottom: 50px; }
+.prep-section {
+  margin-bottom: 50px;
+}
 
 .prep-box {
-  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%);
   /* border: 1px solid var(--border-light); */
   padding: 50px;
   border-radius: 16px;
@@ -520,7 +544,7 @@ body {
   border-radius: 4px;
   font-size: 0.95rem;
   border-left: 2px solid var(--accent);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* --- FOOTER --- */
@@ -545,15 +569,21 @@ body {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
-  .center-content { 
-    flex-direction: column; 
-    padding-top: 80px; 
+  .center-content {
+    flex-direction: column;
+    padding-top: 80px;
     text-align: center;
   }
-  
-  .hero-text-side { 
-    text-align: center; 
-    max-width: 100%; 
+  .scroll-indicator {
+    /* top:20px; */
+    bottom: 0px;
+    left: 50%;
+    
+  }
+
+  .hero-text-side {
+    text-align: center;
+    max-width: 100%;
   }
 
   .btn-box {
@@ -564,9 +594,17 @@ body {
     margin-top: 40px;
     transform: none;
   }
-  
-  .title { font-size: 3rem; }
-  
-  .checklist-container { flex-direction: column; gap: 15px; align-items: center; }
-  .steps-container { margin-top: 20px; }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .checklist-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .steps-container {
+    margin-top: 20px;
+  }
 }

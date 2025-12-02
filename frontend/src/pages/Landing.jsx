@@ -4,8 +4,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../css/Landingcss.css";
 import StaggeredMenu from "../components/Navbar";
 import { EncryptedText } from "../components/encrypted-text";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Landing() {
+  const navigate = useNavigate();
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Why", link: "#why" },
@@ -105,17 +108,17 @@ export default function Landing() {
               <span className="code-bracket">/&gt;</span>
             </h2>
 
-            <p className="subtitle">
+            <div className="subtitle">
               Build real problem-solving skills using your own IDE.
               <br />
-              <p className="font-bold text-amber-300">
+              <div className="font-bold text-amber-300">
                 Stop memorizing. Start engineering.
-              </p>
-            </p>
+              </div>
+            </div>
 
             <div className="btn-box">
               <button className="btn primary-btn">Start Learning</button>
-              <button className="btn secondary-btn">Curriculum</button>
+              <button className="btn secondary-btn" onClick={()=>navigate("/curriculum")}>Curriculum</button>
             </div>
           </div>
 
