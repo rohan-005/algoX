@@ -78,8 +78,15 @@ html, body, #root {
   padding-bottom: 4px;
 }
 
-.category-track::-webkit-scrollbar { height: 4px; }
-.category-track::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+.category-track::-webkit-scrollbar { 
+  height: 0px; 
+}
+.category-track::-webkit-scrollbar-track { 
+  background: transparent;
+}
+.category-track::-webkit-scrollbar-thumb { 
+  background: transparent;
+}
 
 .category-pill {
   background: transparent;
@@ -160,9 +167,16 @@ html, body, #root {
   white-space: nowrap;
 }
 
-/* Scrollbar Styling for sidebar */
-.questions-nav-list::-webkit-scrollbar { width: 6px; }
-.questions-nav-list::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+/* Scrollbar Styling for sidebar - Invisible */
+.questions-nav-list::-webkit-scrollbar { 
+  width: 0px; 
+}
+.questions-nav-list::-webkit-scrollbar-track { 
+  background: transparent;
+}
+.questions-nav-list::-webkit-scrollbar-thumb { 
+  background: transparent;
+}
 
 /* --- Right Content Styling --- */
 .algo-content {
@@ -213,6 +227,7 @@ html, body, #root {
   margin: 0 0 15px 0;
   line-height: 1.1;
   background: linear-gradient(to right, #fff, #aaa);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -608,4 +623,23 @@ code {
   .problem-title {
     font-size: 2rem;
   }
+}
+
+/* Global Scrollbar Customization - Invisible */
+.algo-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.algo-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.algo-content::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* Firefox scrollbar - invisible */
+* {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
 }

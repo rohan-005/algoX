@@ -54,7 +54,7 @@ export default function QuestionsLayout() {
       <aside className="algo-sidebar">
         <div className="sidebar-header">
           <h2 className="brand-title">
-            AlgoNerd <span className="text-accent">DSA</span>
+            algo<span className="text-accent">NERD DSA</span>
           </h2>
           <div className="mini-nav">
             <StaggeredMenu items={menuItems} socialItems={socialItems} />
