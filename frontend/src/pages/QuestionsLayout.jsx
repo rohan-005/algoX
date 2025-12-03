@@ -18,7 +18,7 @@ export default function QuestionsLayout() {
     { label: "LinkedIn", link: "https://linkedin.com" },
   ];
 
-  // Load categories on mount (and allow re-run if selectedCategory changes)
+  // Load categories once on mount
   useEffect(() => {
     fetch("/data/syllabus.json")
       .then((res) => res.json())
@@ -29,14 +29,16 @@ export default function QuestionsLayout() {
         }
       })
       .catch((err) => console.error("Error loading syllabus:", err));
-  }, [selectedCategory]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
+  // Load questions whenever category changes
   useEffect(() => {
     if (!selectedCategory) return;
+
     fetch(`/data/${selectedCategory.detail_file}`)
       .then((res) => res.json())
       .then((data) => {
-        // detail files may either be an array of questions or an object with `questions` key
         const list = Array.isArray(data) ? data : data.questions || [];
         setQuestionList(list);
       })
@@ -48,6 +50,7 @@ export default function QuestionsLayout() {
 
   return (
     <div className="algo-layout">
+      {/* Sidebar */}
       <aside className="algo-sidebar">
         <div className="sidebar-header">
           <h2 className="brand-title">
@@ -66,7 +69,9 @@ export default function QuestionsLayout() {
                 key={cat.category_id}
                 onClick={() => setSelectedCategory(cat)}
                 className={`category-pill ${
-                  selectedCategory?.category_id === cat.category_id ? "active" : ""
+                  selectedCategory?.category_id === cat.category_id
+                    ? "active"
+                    : ""
                 }`}
               >
                 {cat.category_name}
@@ -83,10 +88,14 @@ export default function QuestionsLayout() {
               <li key={q.id}>
                 <NavLink
                   to={`/question/${q.id}`}
-                  className={({ isActive }) => (isActive ? "q-link active" : "q-link")}
+                  className={({ isActive }) =>
+                    isActive ? "q-link active" : "q-link"
+                  }
                 >
                   {/* <span className="q-id">#{q.id}</span> */}
-                  <span className="q-title">{q.title || q.question_title || "Untitled"}</span>
+                  <span className="q-title">
+                    {q.title || q.question_title || "Untitled"}
+                  </span>
                 </NavLink>
               </li>
             ))}
