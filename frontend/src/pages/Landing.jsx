@@ -117,7 +117,7 @@ export default function Landing() {
             </div>
 
             <div className="btn-box">
-              <button className="btn primary-btn">Start Learning</button>
+              <button className="btn primary-btn" onClick={()=>navigate("/question")}>Start Learning</button>
               <button className="btn secondary-btn" onClick={()=>navigate("/curriculum")}>Curriculum</button>
             </div>
           </div>

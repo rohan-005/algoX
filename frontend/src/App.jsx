@@ -7,6 +7,9 @@ import {
 import './App.css'
 import Landing from "./pages/Landing";
 import Syllabus from "./pages/Syllabus";
+// import Questions from "./pages/Questions";
+import QuestionsLayout from "./pages/QuestionsLayout";
+import QuestionDetails from "./pages/QuestionDetails";
 
 function App() {
 
@@ -16,6 +19,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing/>} />
         <Route path="/curriculum" element={<Syllabus/>} />
+        <Route path="/question" element={<QuestionsLayout />}>
+          <Route path=":id" element={<QuestionDetails />} />
+        </Route>
       </Routes>
       </div>
     </Router>
